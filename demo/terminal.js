@@ -25,6 +25,42 @@ function stopRunning() {
   running = false;
 }
 
+
+$(function(){
+  
+  // For example purposes only
+  function msg(txt){
+    $('.message').text(txt);
+  }
+  
+  window.input = new oTinput({
+    element: document.querySelector('.example-input'),
+    onFileChange: function(file){
+      console.log(file);
+      msg('File is: '+file.name);
+      var audio = new Audio('/Users/Rawan/Downloads/dd/Dutty.mp3');
+      audio.play();
+    },
+    onFileError: function(err){
+      console.log(err);
+      msg('Error: '+err.message);
+    },
+    onURLSubmit: function(url){
+      msg('URL submitted: '+url);
+    },
+    onURLError: function(err, url){
+      msg('Bad URL: '+url);
+    },
+    onDragover: function(){
+      msg('Drop file now to input');
+    },
+    onDragleave: function(){
+      msg('');
+    }
+  });
+});
+
+
 function retrieveSampleImage() {
   var oReq = new XMLHttpRequest();
   oReq.open("GET", "file:///Users/Rawan/Desktop/testpic.png", true);
