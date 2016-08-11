@@ -81,7 +81,7 @@ function runCommand(text) {
       arguments: args,
       files: [
         {
-          "name": "input.jpeg",
+          "name": "input.png",
           "data": sampleImageData
         },
         {
