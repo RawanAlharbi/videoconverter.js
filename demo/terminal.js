@@ -27,7 +27,7 @@ function stopRunning() {
 
 function retrieveSampleImage() {
   var oReq = new XMLHttpRequest();
-  oReq.open("GET", "/Users/Rawan/Desktop/testpic.png", true);
+  oReq.open("GET", "file:///Users/Rawan/Desktop/testpic.png", true);
   oReq.responseType = "arraybuffer";
 
   oReq.onload = function (oEvent) {
